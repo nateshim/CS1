@@ -5,6 +5,7 @@ import {withStyles, createStyles} from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import hw02 from './static/hw_zips/hw02.zip';
 
 const HW02 = (props) => {
     const classes = props.classes;
@@ -18,7 +19,7 @@ const HW02 = (props) => {
             </Container>
             <Container className={classes.section}>
                 <Typography className={classes.header}>Instructions</Typography>
-                <Typography className={classes.textIndent}>To start the homework, download hw02.zip. Inside, you will find the hw02.py file and the test_hw02.py file. You will only need to edit the hw02.py file.</Typography>
+                <Typography className={classes.textIndent}>To start the homework, download <a href={hw02} download>hw02.zip</a>. Inside, you will find the hw02.py file and the test_hw02.py file. You will only need to edit the hw02.py file.</Typography>
                 <Typography className={classes.boldText}>Note: Homework is graded based on effort, not correctness. However, there is no partial credit; you must show substantial effort on every problem to receive any points. This homework is out of 2 points.</Typography>
             </Container>
             <Container className={classes.section}>

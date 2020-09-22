@@ -5,6 +5,7 @@ import {withStyles, createStyles} from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
+import project from './static/project.zip';
 
 const Project = (props) => {
     const classes = props.classes;
@@ -18,7 +19,7 @@ const Project = (props) => {
         </Container>
         <Container className={classes.section}>
             <Typography className={classes.header}>Instructions</Typography>
-            <Typography className={classes.text}>To start the homework, download project.zip.</Typography>
+            <Typography className={classes.text}>To start the homework, download <a href={project} download>project.zip</a>.</Typography>
             <Typography className={classes.boldText}>Note: This project is graded based on correctness. However, there will be partial credit given for partially finished solutions</Typography>
         </Container>
         <Container className={classes.section}>
