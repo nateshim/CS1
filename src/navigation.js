@@ -67,7 +67,7 @@ const Navigation = (props) => {
     );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme) => createStyles({
     appBar: {
         backgroundColor: '#4062BB',
     },
@@ -82,6 +82,9 @@ const useStyles = createStyles({
         overlow: 'hidden',
         whiteSpace: 'nowrap',
         flexGrow: 1,
+        [theme.breakpoints.down('xs')]: {
+           display: 'none',
+        },
     },
     text: {
         fontFamily: 'Archivo',
@@ -101,12 +104,19 @@ const useStyles = createStyles({
             textDecoration: 'underline',
             textDecorationColor: '#EBEBEB',
             transitionDuration: '.5s',
-        }
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '.75rem',
+        },
     },
     linkBox: {
+        justifyContent: 'center',
         textOverflow: 'ellipsis',
         overlow: 'hidden',
         whiteSpace: 'nowrap',
+        [theme.breakpoints.down('xs')]: {
+           padding: '1rem',
+        },
     }
 });
 

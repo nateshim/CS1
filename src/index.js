@@ -12,24 +12,32 @@ import './css/index.css';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { render } from 'react-dom';
+import {ThemeProvider, unstable_createMuiStrictModeTheme} from '@material-ui/core/styles';
+import ScrollToTop from './ScrollToTop';
 
+const theme = unstable_createMuiStrictModeTheme();
 function App() {
     return (
-      <Router>
-        <div>
-          <Switch>
-            <Route exact path="/CS1" component={Home}/>
-            <Route exact path="/CS1/syllabus" component={Syllabus}/>
-            <Route exact path="/CS1/staff" component={Staff}/>
-            <Route exact path="/CS1/lab00" component={Lab}/>
-            <Route exact path="/CS1/hw00" component={HW00}/>
-            <Route exact path="/CS1/hw01" component={HW01}/>
-            <Route exact path="/CS1/hw02" component={HW02}/>
-            <Route exact path="/CS1/hw03" component={HW03}/>
-            <Route exact path="/CS1/project" component={Project}/>
-          </Switch>
-        </div>
-      </Router>
+      <React.StrictMode>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <ScrollToTop/>
+            <div>
+              <Switch>
+                <Route exact path="/CS1" component={Home}/>
+                <Route exact path="/CS1/syllabus" component={Syllabus}/>
+                <Route exact path="/CS1/staff" component={Staff}/>
+                <Route exact path="/CS1/lab00" component={Lab}/>
+                <Route exact path="/CS1/hw00" component={HW00}/>
+                <Route exact path="/CS1/hw01" component={HW01}/>
+                <Route exact path="/CS1/hw02" component={HW02}/>
+                <Route exact path="/CS1/hw03" component={HW03}/>
+                <Route exact path="/CS1/project" component={Project}/>
+              </Switch>
+            </div>
+          </Router>
+        </ThemeProvider>
+      </React.StrictMode>
     );
 }
 
