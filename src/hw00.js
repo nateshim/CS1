@@ -10,7 +10,7 @@ import hw00 from './static/hw_zips/hw00.zip';
 const HW00 = (props) => {
     const classes = props.classes;
     return (
-        <Box>
+        <Box className={classes.cs1}>
             <Navigation/>
             <Container className = {classes.section}>
                 <Typography className={classes.header}>Homework 0: Getting Started</Typography>
@@ -39,7 +39,14 @@ const HW00 = (props) => {
     );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme) => createStyles({
+    cs1: {
+        width: '100%',
+        height: '100%',
+        margin: '0px',
+        padding: '0px',
+        overflowX: 'hidden',
+    },
     section: {
         display: 'block',
     },
@@ -49,6 +56,9 @@ const useStyles = createStyles({
         padding: '1rem',
         paddingBottom: '0rem',
         fontSize: '1.5rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
     textIndent: {
         fontFamily: 'Open Sans',
@@ -57,6 +67,9 @@ const useStyles = createStyles({
         paddingBottom: '0rem',
         fontSize: '1.5rem',
         textIndent: '2rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
     boldText: {
         fontFamily: 'Open Sans',
@@ -64,15 +77,24 @@ const useStyles = createStyles({
         fontWeight: 'bold',
         paddingBottom: '0rem',
         fontSize: '1.5rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
     bottomText: {
         padding: '2rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
     subText: {
         fontFamily: 'Open Sans',
         fontStyle: 'italic',
         marginLeft: '2.5rem',
         paddingBottom: '2rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
     underline: {
         backgroundColor: '#4062BB',
@@ -86,6 +108,9 @@ const useStyles = createStyles({
         fontSize: '3rem',
         padding: '1rem',
         display: 'flex',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1.5rem',
+        },
     },
 })
 

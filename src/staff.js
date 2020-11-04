@@ -12,7 +12,7 @@ import augustine from './static/augustine.jpeg';
 const Staff = (props) => {
     const classes = props.classes;
     return (
-        <Box>
+        <Box className={classes.cs1}>
             <Navigation/>
             <Container className = {classes.section}>
                 <Typography className={classes.header}>Staff</Typography>
@@ -37,10 +37,21 @@ const Staff = (props) => {
     );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme) => createStyles({
+    cs1: {
+        width: '100%',
+        height: '100%',
+        margin: '0px',
+        padding: '0px',
+        overflowX: 'hidden',
+    },
     avatar: {
         width: '200px',
         height: '200px',
+        [theme.breakpoints.down('xs')]: {
+            width: '100px',
+            height: '100px',
+        },
     },
     section: {
         display: 'block',
@@ -57,6 +68,10 @@ const useStyles = createStyles({
         paddingBottom: '0rem',
         fontSize: '1.5rem',
         textIndent: '2rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '.5rem',
+        },
+        
     },
     bottomText: {
         padding: '2rem',
@@ -72,6 +87,9 @@ const useStyles = createStyles({
         fontWeight: 500,
         fontSize: '3rem',
         padding: '1rem',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1rem',
+        },
     },
 })
 
